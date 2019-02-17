@@ -1,0 +1,29 @@
+#news{
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 65px;
+}
+#news .btn{
+    margin: 0px 5px;
+    border-radius: inherit;
+    background-color: rgba(37,44,65,.8);
+    color: white;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+}
+#news .btn:hover,#news .btn:focus{
+    border: 1px solid #EFA970;
+    color: #EFA970;
+    box-shadow: none;
+}
+#news .btn_tabphim,#news .btn_tabphim:hover,#news .btn_tabphim:focus{
+    background: #EFA970;
+    color: white;
+}
+
+@media screen and (max-width: 576px){
+    #news .btn{
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+}

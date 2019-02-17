@@ -1,0 +1,6 @@
+<ng-container *ngIf="!gheDetail.DaDat;else gheDaChon">
+    <button [ngClass]="{'btn_dangchon':statusGhe}" class="btn btn_ghe" (click)="chonGhe()"></button>
+</ng-container>
+<ng-template #gheDaChon>
+    <button class="btn btn_ghe btn_dachon" disabled style="cursor:not-allowed;"></button>
+</ng-template>

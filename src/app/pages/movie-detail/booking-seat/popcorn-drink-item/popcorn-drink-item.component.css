@@ -1,0 +1,29 @@
+/* food */
+.food {
+    padding: 15px 10px;
+}
+
+.food img {
+    border-radius: 50%;
+}
+.food p {
+    margin: 0px;
+    font-weight: 600;
+}
+
+.food span {
+    color: orange;
+    font-weight: bold;
+}
+
+.food i.fa {
+    color: orange;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.food .number {
+    padding: 0px 8px;
+    background: white;
+    border: 1px solid;
+}

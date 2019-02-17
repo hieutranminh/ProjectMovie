@@ -1,0 +1,16 @@
+<div class="food">
+  <div class="row">
+    <div class="col-2 d-flex align-items-center">
+      <img [src]="itemFood.hinhAnh" alt="bapnuocimg" class="w-100">
+    </div>
+    <div class="col-7">
+      <p>{{itemFood.ten}}</p>
+      <span>{{itemFood.gia | currency : "VND"}}</span>
+    </div>
+    <div class="col-3 d-flex align-items-center">
+      <i (click)="Giam()" class="fa fa-minus"></i>
+      <button class="number">{{itemFood.soLuong}}</button>
+      <i (click)="Tang()" class="fa fa-plus"></i>
+    </div>
+  </div>
+</div>

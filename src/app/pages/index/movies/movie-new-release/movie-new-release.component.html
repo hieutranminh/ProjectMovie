@@ -1,0 +1,6 @@
+
+<owl-carousel-o [options]="customOptions">
+    <ng-template *ngFor="let movie of listMovie" class="item" carouselSlide>
+        <app-movie-item  [movieItem]="movie"></app-movie-item>
+    </ng-template>
+</owl-carousel-o>

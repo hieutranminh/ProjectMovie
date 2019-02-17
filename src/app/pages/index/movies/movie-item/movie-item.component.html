@@ -1,0 +1,17 @@
+<div class="item_content">
+  <img  [src]="movieItem.HinhAnh" alt="Phim IMG">
+  <div class="btn_itemmovie">
+    <div class="btn_all">
+      <a data-vbtype="video" data-autoplay="true" [href]="movieItem.Trailer" class="venobox btn btn_trailer"><i class="fa fa-play"></i> Trailer</a>
+      <a [routerLink]="['/chitiet',movieItem.MaPhim]" class="btn btn_datve"><i class="fa fa-ticket"></i> Chi tiết</a>
+    </div>
+  </div>
+</div>
+<div class="center_content">
+  <a [routerLink]="['/chitiet',movieItem.MaPhim]" class="title">{{movieItem.TenPhim}}</a>
+  <p class="des mt-2">
+    <b>IMDb</b><span>7.5</span>
+    <i> - {{movieItem.NgayKhoiChieu | date : 'dd/MM/yyyy'}}</i>
+  </p>
+</div>
+

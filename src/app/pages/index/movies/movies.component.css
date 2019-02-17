@@ -1,0 +1,28 @@
+#movie{
+    font-family: 'Roboto', sans-serif;
+    padding: 50px 0px;
+}
+#movie .btn{
+    margin: 0px 5px;
+    border-radius: inherit;
+    background-color: rgba(37,44,65,.8);
+    color: white;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+}
+#movie .btn:hover,#movie .btn:focus{
+    border: 1px solid #EFA970;
+    color: #EFA970;
+    box-shadow: none;
+}
+#movie .btn_tabphim,#movie .btn_tabphim:hover,#movie .btn_tabphim:focus{
+    background: #EFA970;
+    color: white;
+}
+@media screen and (max-width: 576px){
+    #movie .btn{
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+} 

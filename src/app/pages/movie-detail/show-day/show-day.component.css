@@ -1,0 +1,33 @@
+.thongtindatghe{
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(37,44,65,.8);
+    margin-bottom: 50px;
+    padding:  40px 0px;
+}
+.thongtindatghe .form-control {
+    box-shadow: none;
+    color: orangered;
+    border: 2px solid orange;
+}
+.thongtindatghe .btn_chonghe{
+    width: 100%;
+    background: orange;
+    color: white;
+    font-weight: bold;
+}
+@media screen and (max-width: 1200px){
+
+}
+@media screen and (max-width: 992px){
+    .thongtindatghe .form-control{
+        margin: 10px 0px;
+    }
+    .thongtindatghe .btn_chonghe{
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 576px){
+    .thongtindatghe{
+        margin-top: 50px;
+    }
+}

@@ -1,0 +1,31 @@
+<div class="thongtindatghe">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-lg-3">
+        <select class="form-control">
+          <option value="">--Chọn rạp--</option>
+          <option value="">BHD Star</option>
+        </select>
+      </div>
+      <div class="col-sm-4 col-lg-3">
+        <select #ngayChieu class="form-control" (change)="getGioChieu(ngayChieu.value)">
+          <option value="">--Ngày chiếu--</option>
+          <option value="{{itemNgayChieu.NgayChieuGioChieu}}" *ngFor="let itemNgayChieu of movieDetail.LichChieu">{{itemNgayChieu.NgayChieuGioChieu | date: 'dd/MM/yyyy'}}</option>
+        </select>
+      </div>
+      <div class="col-sm-4 col-lg-3">
+        <select #gioChieu class="form-control" (change)="getMaLichChieu(gioChieu.value)">
+          <option value="">--Suất chiếu--</option>
+          <option value="{{itemSuatChieu}}" *ngFor="let itemSuatChieu of SuatChieuArr">{{itemSuatChieu ? (itemSuatChieu | date: 'HH:mm') : "Chưa chọn ngày"}}</option>
+        </select>
+      </div>
+      <div class="col-sm-12 col-lg-3">
+        <button class="btn btn_chonghe" (click)="showDatGhe()">Chọn ghế</button>
+        <!-- [routerLink]="['datghe',MaLichChieu]" -->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="thongbaothanhcong alert alert-danger" [ngClass]="{'thongbaohienra':thongBaoChonGhe === true}" role="alert">
+  <strong>Chưa chọn ngày hoặc suất chiếu</strong>
+</div>

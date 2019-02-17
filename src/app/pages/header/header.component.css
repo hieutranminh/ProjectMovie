@@ -1,0 +1,273 @@
+/* font-family: 'Roboto', sans-serif; */
+#myMenu{
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    background-color: transparent;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    z-index: 90;
+}
+#myMenu.changeColor {
+    background: #252c41;
+    padding: 0px 15px;
+}
+#myMenu .navbar-brand img{
+    width: 200px;
+}
+#myMenu ul li{
+    margin: 0;
+}
+#myMenu ul li a {
+    padding: 0;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0px 16px;
+    font-size: 14px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+#myMenu ul li.active a,#myMenu ul li a:hover{
+    color: rgb(255, 255, 179);
+    text-shadow: 1px 1px 2px;
+}
+#myMenu .btn{
+    color: white;
+    margin-left: 12px;
+    padding: 4px 10px;
+}
+#myMenu .btn_dangnhap{
+    background-color: rgb(241, 181, 132);
+}
+#myMenu .btn_dangnhap:hover{
+    background-color:rgb(236, 156, 90);
+}
+#myMenu .btn_dangky{
+    background-color: #3ece7e;
+}
+#myMenu .btn_dangky:hover{
+    background-color: #3ab973;
+}
+.one,.two,.three{
+    background-color: white;
+    height: 4px;
+    margin: 5px 0px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.one{width: 40px;}
+.two{width: 25px;}
+.three{width: 32px;}
+.navbar-toggler{
+    padding: 0px;
+}
+.navbar-toggler:hover .two, .navbar-toggler:hover .three{
+    width: 40px;
+}
+.navbar-toggler:focus{
+    outline: none;
+}
+/* CSS MODAL */
+#modalHeader .modal-content {
+    background: white;
+    border: 3px solid orange;
+    font-family: 'Roboto', sans-serif;
+}
+#modalHeader .twobtn {
+    border-bottom: 2px solid orange;
+    padding-bottom: 15px;
+}
+
+#modalHeader .twobtn .btn {
+    width: 50%;
+    background: transparent;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: inherit;
+    box-shadow: none;
+}
+#modalHeader .twobtn .btnChange{
+    border: 2px solid orange;
+    background: gold;
+    color: white;
+}
+#modalHeader .twobtn .btn:hover{
+    border: 2px solid orange;
+}
+#modalHeader .twobtn .btn_tabdangky {
+    border: 2px solid transparent;
+    border-left: 2px solid black;
+   
+}
+#modalHeader .twobtn .btn_tabdangnhap {
+    border: 2px solid transparent;
+    border-right: 2px solid black;
+}
+#modalHeader .frm_dangky,.frm_dangnhap{
+    margin: 25px 0px;
+}
+#modalHeader .frm_dangky .form-group,#modalHeader .frm_dangnhap .form-group{
+    margin-bottom: 6px;
+}
+#modalHeader .frm_dangky label,.frm_dangnhap label{
+    color: orange;
+    font-weight: bold;
+    border-bottom: 1px dashed;
+}
+#modalHeader .frm_dangky .form-control,.frm_dangnhap .form-control{
+    border: 1px solid rgba(124, 121, 121, 0.55);
+    outline: none;
+    box-shadow: none;
+    background: rgba(230, 230, 230, 0.2);
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+}
+#modalHeader .frm_dangky .form-control:hover,.frm_dangnhap .form-control:hover,#modalHeader .frm_dangky .form-control:focus,.frm_dangnhap .form-control:focus{
+    box-shadow: 0px 0px 1px 0px #3ece7e;
+}
+#modalHeader .frm_dangky .submit,.frm_dangnhap .submit{
+    border-top: 2px solid orange;
+    padding-top: 25px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+#modalHeader .frm_dangky .submit .btn,.frm_dangnhap .submit .btn{
+    padding: 7px 25px;
+    text-transform: uppercase;
+}
+#modalHeader .frm_dangky .submit .btn_submit_dangky,.frm_dangnhap .submit .btn_submit_dangnhap{
+    background: orange;
+    color: white;
+}
+/* CSS MODAL DANG NHAP */
+.switch{
+	-webkit-appearance:none;
+	width: 60px;
+	height: 30px;
+	background: rgb(247,247,247);
+	border-radius: 30px;
+	position: relative;
+	outline: none;
+	border: 1px solid rgb(142,143,147);
+	transition: all 200ms;
+    -webkit-transition: all 200ms;
+    -moz-transition: all 200ms;
+    -ms-transition: all 200ms;
+    -o-transition: all 200ms;
+}
+.switch:checked {
+    background: orange;
+    border: 1px solid orange;
+}
+.switch::before {
+    content: "";
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    background: white;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.5);
+    transition: all 200ms;
+    -webkit-transition: all 200ms;
+    -moz-transition: all 200ms;
+    -ms-transition: all 200ms;
+    -o-transition: all 200ms;
+}
+.switch:checked::before
+{
+	top:0px;
+    left: 29px;
+	box-shadow:none;
+}
+.frm_dangnhap span{
+    margin-left: 7px;
+    color: orange;
+    font-weight: bold;
+    font-size: 14px;
+}
+.error{
+    color: red;
+}
+
+#modalHeader .form-group .form-control.ng-invalid{
+    border-left: 2px solid red;
+}
+#modalHeader .form-group .form-control.ng-valid{
+    border-left: 2px solid green;
+}
+.ttdangnhap {
+    color: white;
+    font-size: 14px;
+    user-select: none;
+}
+.ttdangnhap  b,.ttdangnhap  i{
+    color: orange;
+}
+.ttdangnhap  a{
+    cursor: pointer;
+}
+.ttdangnhap  a:hover{
+    text-decoration: underline;
+}
+@media screen and (max-width: 1200px){
+
+}
+@media screen and (max-width: 992px){
+    #myMenu .navbar-brand img{
+        width: 150px;
+    }
+    #myMenu ul li a{
+        font-size: 11px;
+        margin: 0px 8px;
+    }
+    #myMenu .btn{
+        font-size: 12px;
+    }
+    .ttdangnhap {   
+        font-size: 10px;
+        
+    }
+}
+@media screen and (max-width: 576px){
+    #myMenu{
+        background-color: #252c41;
+    }
+    #myMenu .navbar-brand img{
+        width: 150px;
+    }
+    #myMenu ul{
+        margin: 20px 0px 0px 0px!important;
+    }
+    #myMenu ul li a{
+        text-align: center;
+        padding: 10px 0px;
+    }
+    #myMenu .btn{
+        display: block;
+        margin: 10px auto 30px;
+    }
+    .ttdangnhap{
+        display: inline-block;
+    }
+}
+

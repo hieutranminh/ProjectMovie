@@ -1,0 +1,213 @@
+<nav id="myMenu" class="navbar navbar-expand-md fixed-top">
+  <a class="navbar-brand"routerLink="/">
+    <img src="../../../assets/images/logo1.png" alt="Logo">
+  </a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <div class="one"></div>
+      <div class="two"></div>
+      <div class="three"></div>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav m-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="" >Trang Chủ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Bài viết</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Khuyến mãi</a>
+      </li>
+      <li class="nav-item" *ngIf="navLichSuDatVe">
+        <a class="nav-link" routerLink="/lichsudatve">Lịch sử đặt vé</a>
+      </li>
+    </ul>
+    <div class="my-2 my-lg-0 text-center">
+      <span *ngIf="!statusDangNhap" class="ttdangnhap">Xin chào ! <i class="fa fa-user-circle-o"></i> <b> {{tenDangNhap}} |</b><a (click)="dangXuat()"> Đăng xuất</a></span>
+      <button *ngIf="statusDangNhap" class="btn btn_dangnhap" (click)="changeStatus('dangnhap')" data-toggle="modal" data-target="#modalHeader">Đăng nhập</button>
+      <button class="btn btn_dangky" (click)="changeStatus('dangky')" data-toggle="modal" data-target="#modalHeader">Đăng ký</button>
+    </div>
+  </div>
+</nav>
+<!-- Thong bao dang ky thanh cong -->
+<div class="thongbaothanhcong alert alert-success" [ngClass]="{'thongbaohienra':thongBaoThanhCongDK === true}" role="alert">
+  Đăng ký tài khoản <strong>THÀNH CÔNG</strong>
+</div>
+<div class="thongbaothanhcong alert alert-success" [ngClass]="{'thongbaohienra':thongBaoThanhCongDN === true}" role="alert">
+  Đăng nhập tài khoản <strong>THÀNH CÔNG</strong>
+</div>
+<div class="thongbaothanhcong alert alert-danger" [ngClass]="{'thongbaohienra':thongBaoThanhCongDX === true}" role="alert">
+  <strong>Đã đăng xuất tài khoản</strong>
+</div>
+<!-- MODAL DANG NHAP & DANG KY -->
+<div class="modal fade" id="modalHeader" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="twobtn">
+            <button *ngIf="statusDangNhap" class="btn btn_tabdangnhap" [ngClass]="{'btnChange':status === 'dangnhap'}" (click)="changeStatus('dangnhap')">Đăng Nhập</button>
+            <button class="btn btn_tabdangky " [ngStyle]="{'width':!statusDangNhap ? '100%' : '50%' }"  [ngClass]="{'btnChange':status === 'dangky'}" (click)="changeStatus('dangky')">Đăng Ký</button>  
+        </div>
+
+        <!-- DANG KY -->
+        <div *ngIf="status=== 'dangky'"  class="frm_dangky">
+          <form  #frmDangKy="ngForm" (ngSubmit)="Register(frmDangKy)">
+            <div class="row">
+              <div class="col-lg-6 mb-3">
+                  <label for="">Họ tên</label>
+                  <div class="form-group">
+                    <input #hoten="ngModel" ngModel required type="text" class="form-control" name="HoTen" placeholder="Tran Minh Hieu" [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêếìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+                    "ẾẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếẾỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+                    "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"'>
+                  </div>
+                  <div class="error" *ngIf="hoten.errors && (hoten.touched || hoten.dirty || frmDangKy.submitted)">
+                    <div *ngIf="hoten.errors.required">
+                      * Không được để trống
+                    </div>
+                    <div *ngIf="hoten.errors.pattern">
+                      * Họ Tên phải là chữ
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 mb-3">
+                  <label for="">Tài khoản</label>
+                  <div class="form-group">
+                    <input #taikhoan="ngModel" ngModel required type="text" class="form-control" name="TaiKhoan" placeholder="hieutranminh" [pattern]='"^[a-zA-Z0-9\.\@\_]*$"'>
+                  </div>
+                  <div class="error" *ngIf="taikhoan.errors && (taikhoan.touched || taikhoan.dirty || frmDangKy.submitted)">
+                    <div *ngIf="taikhoan.errors.required">
+                      * Không được để trống
+                    </div>
+                    <div *ngIf="taikhoan.errors.pattern">
+                      * Tài khoản không được có khoảng trắng
+                    </div>
+                  </div>
+                  <div class="error">
+                    {{thongBaoDangKy}}
+                  </div>
+              </div>
+              <div class="col-lg-6 mb-3">
+                  <label for="">Mật khẩu</label>
+                  <div class="form-group">
+                    <input #matkhau="ngModel" ngModel required type="password" class="form-control" name="MatKhau" [pattern]='"^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$"'>
+                  </div>
+                  <div class="error" *ngIf="matkhau.errors && (matkhau.touched || matkhau.dirty || frmDangKy.submitted)">
+                    <div *ngIf="matkhau.errors.required">
+                      * Không được để trống
+                    </div>
+                    <div *ngIf="matkhau.errors.pattern">
+                      * Tối thiểu 8 ký tự bao gồm chữ và số
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 mb-3">
+                  <label for="">Nhập lại mật khẩu</label>
+                  <div class="form-group">
+                    <input #nhaplaimatkhau="ngModel"  ngModel required type="password" class="form-control" name="NhapLaiMatKhau">
+                  </div>
+                  <div class="error" *ngIf="nhaplaimatkhau.errors && (nhaplaimatkhau.touched || nhaplaimatkhau.dirty || frmDangKy.submitted)">
+                    <div *ngIf="nhaplaimatkhau.errors.required">
+                      * Không được để trống
+                    </div>
+                  </div>
+                  <div class="error" *ngIf="nhaplaimatkhau.errors || matkhau.value != nhaplaimatkhau.value">
+                    <div *ngIf="matkhau.value != nhaplaimatkhau.value">
+                      * Không trùng với mật khẩu
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                  <label for="">Email</label>
+                  <div class="form-group">
+                    <input #email="ngModel" ngModel required type="text" class="form-control" name="Email" placeholder="hieu@gmail.com" [pattern]='"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"'>
+                  </div>
+                  <div class="error" *ngIf="email.errors && (email.touched || email.dirty || frmDangKy.submitted)">
+                    <div *ngIf="email.errors.required">
+                      * Không được để trống
+                    </div>
+                    <div *ngIf="email.errors.pattern">
+                      * Email không đúng định dạng
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                  <label for="">Sinh nhật</label>
+                  <div class="form-group">
+                    <input #sinhnhat="ngModel" ngModel required type="date" class="form-control" name="SinhNhat">
+                  </div>
+                  <div class="error" *ngIf="sinhnhat.errors && (sinhnhat.touched || sinhnhat.dirty || frmDangKy.submitted)">
+                    <div *ngIf="sinhnhat.errors.required">
+                      * Phải chọn ngày sinh nhật
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                  <label for="">Số điện thoại</label>
+                  <div class="form-group">
+                    <input #sodt="ngModel" ngModel required type="text" class="form-control" name="SoDT" placeholder="0909333222" [pattern]='"^[0-9]+$"'>
+                    <div class="error" *ngIf="sodt.errors && (sodt.touched || sodt.dirty || frmDangKy.submitted)">
+                      <div *ngIf="sodt.errors.required">
+                        * Không được để trống
+                      </div>
+                      <div *ngIf="sodt.errors.pattern">
+                        * Số ĐT phải là số
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="submit">
+                <button type="submit" class="btn btn_submit_dangky">Đăng Ký</button>
+                <button type="button" class="btn btn-secondary closeModal" data-dismiss="modal">Đóng</button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- DANG NHAP -->
+        <div *ngIf="status=== 'dangnhap'" class="frm_dangnhap">
+          <form #frmDangNhap="ngForm" (ngSubmit)="Login(frmDangNhap)">
+            <div class="row">
+              <div class="col-lg-12">
+                  <label for="">Tài khoản</label>
+                  <div class="form-group">
+                    <input #TaiKhoan="ngModel" ngModel required name="TaiKhoan" type="text" class="form-control" placeholder="Username">
+                  </div>
+                  <div class="error" *ngIf="TaiKhoan.errors && (TaiKhoan.touched || TaiKhoan.dirty || frmDangNhap.submitted)">
+                    <div *ngIf="TaiKhoan.errors.required">
+                      * Không được để trống
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-12">
+                  <label for="">Password</label>
+                  <div class="form-group">
+                    <input #MatKhau="ngModel" ngModel required name="MatKhau" type="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="error" *ngIf="MatKhau.errors && (MatKhau.touched || MatKhau.dirty || frmDangNhap.submitted)">
+                    <div *ngIf="MatKhau.errors.required">
+                      * Không được để trống
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-12 my-2">
+                <div class="error">
+                  {{thongBaoDangNhap}}
+                </div>
+              </div>
+              <div class="col-lg-12 d-flex align-items-center mt-2">
+                  <input #LuuThongTin="ngModel" ngModel name="LuuThongTin" type="checkbox" class="switch">
+                  <span>Lưu thông tin đăng nhập</span>
+              </div>
+            </div>
+            <div class="submit">
+                <button type="submit" class="btn btn_submit_dangnhap">Đăng nhập</button>
+                <button type="button" class="btn btn-secondary closeModal" data-dismiss="modal">Đóng</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

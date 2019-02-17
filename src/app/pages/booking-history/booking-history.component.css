@@ -1,0 +1,42 @@
+.lichsudatve {
+    margin: 150px 0px 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+.lichsudatve h4 {
+    text-transform: uppercase;
+    color: orange;
+    font-weight: 600;
+    background: white;
+    padding: 8px 0px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 9px #ffff5c;
+}
+.lichsudatve p {
+    margin: 5px 0px;
+    color: white;
+}
+.lichsudatve p span {
+    color: orange;
+    font-weight: 500;
+    border-bottom: 1px dashed;
+}
+.table_head {
+    background: orange;
+    color: white;
+}
+
+.table_head tr th {
+    border: 2px solid white;
+}
+.table_body {
+    background: white;
+    border: 2px solid white;
+}
+
+.table_body tr td {
+    border-right: 2px solid gainsboro;
+    font-weight: 500;
+}
+.table_body tr td:last-child {
+    border: none;
+}

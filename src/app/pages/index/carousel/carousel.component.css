@@ -1,0 +1,45 @@
+#myCarousel{
+    font-family: 'Montserrat', sans-serif;
+}
+#myCarousel .carousel-control{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    opacity: 1;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.466);
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+#myCarousel .carousel-inner{
+    overflow: unset;
+}
+#myCarousel .carousel-control:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+}
+#myCarousel .carousel-control i{
+    color: white;
+    font-size: 30px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+#myCarousel .carousel-control:hover i{
+    color: black;
+}
+@media screen and (max-width: 1200px){
+
+}
+@media screen and (max-width: 992px){
+
+}
+@media screen and (max-width: 576px){
+    #myCarousel{
+        margin-top: 50px;
+    }
+} 

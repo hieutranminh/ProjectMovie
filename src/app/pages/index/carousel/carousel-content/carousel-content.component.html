@@ -1,0 +1,40 @@
+
+<div class="carousel-item active" *ngFor="let slide of SlideArr; let index = first" [class.active]="index" [style.background-image]="'url('+ slide.HinhAnh +')'">
+  <div class="carousel-caption">
+    <div class="caption-content">
+      <h3>{{slide.TenPhim | titlecase }}</h3>
+      <p>The world's top bodyguard gets a new client, a hit man who must testify at the international Court of Justice</p>
+      <div class="trailer d-flex justify-content-center align-items-center">
+        <span>IMDb</span><b>7.0</b>
+        <a data-vbtype="video" data-autoplay="true" [href]="slide.Trailer" class="btn_trailer venobox"><i class="fa fa-play"></i>Play
+          Trailer</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="carousel-item" [style.background-image]="'url('+ SlideArr[1].HinhAnh +')'">
+  <div class="carousel-caption">
+    <div class="caption-content">
+      <h3>The Hitmans Bodyguard (2017)</h3>
+      <p>The world's top bodyguard gets a new client, a hit man who must testify at the international Court of Justice</p>
+      <div class="trailer d-flex justify-content-center align-items-center">
+        <span>IMDb</span><b>7.0</b>
+        <a data-vbtype="video" data-autoplay="true" [href]="SlideArr[0].Trailer" class="btn_trailer venobox"><i class="fa fa-play"></i>Play
+          Trailer</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="carousel-item" [style.background-image]="'url('+ SlideArr[2].HinhAnh +')'">
+  <div class="carousel-caption">
+    <div class="caption-content">
+      <h3>The Hitmans Bodyguard (2017)</h3>
+      <p>The world's top bodyguard gets a new client, a hit man who must testify at the international Court of Justice</p>
+      <div class="trailer d-flex justify-content-center align-items-center">
+        <span>IMDb</span><b>7.0</b>
+        <a data-vbtype="video" data-autoplay="true" [href]="SlideArr[0].Trailer" class="btn_trailer venobox"><i class="fa fa-play"></i>Play
+          Trailer</a>
+      </div>
+    </div>
+  </div>
+</div> -->

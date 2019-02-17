@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #3F467C!important;
+}
+.owl-dots {
+    margin-top: 25px;
+}
+.owl-theme .owl-dots .owl-dot.active span {
+    background: orange!important;
+}
+.owl-prev {
+    position: absolute;
+    top: 40%;
+    left: -25px;
+    display: block !important;
+    border: 0px solid black;
+    background: transparent!important;
+    margin: 0px!important;
+    padding: 0px!important;
+}
+.owl-next {
+    position: absolute;
+    top: 40%;
+    right: -25px;
+    display: block !important;
+    border: 0px solid black;
+    background: transparent!important;
+    margin: 0px!important;
+    padding: 0px!important;
+}
+.owl-prev i, .owl-next i {
+    font-size: 40px;
+    color: white;
+}
+.thongbaothanhcong{
+    position: fixed;
+    z-index: 1100;
+    width: 320px;
+    top: 8px;
+    left: 50%;
+    margin-left: -160px;
+    text-align: center;
+    border: 2px solid orange;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+.thongbaohienra{
+    transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+    opacity: 1;
+    visibility: visible;
+}
+@media screen and (max-width: 1200px){
+
+}
+@media screen and (max-width: 992px){
+    .owl-dots {
+        margin-top: 45px;
+    }
+}
+@media screen and (max-width: 576px){
+    .owl-prev,.owl-next{
+        display: none!important;
+    }
+} 

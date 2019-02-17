@@ -1,0 +1,96 @@
+#footer{
+    background: #252c41;
+
+    padding: 40px 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer01 img{
+    width: 70%;
+}
+.footer01 p{
+    color: white;
+    margin: 23px 0px;
+    font-size: 15px;
+}
+
+.footer02 .title,.footer03 .title{
+    color: orange;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.footer02 ul{
+    margin-top: 20px;
+}
+.footer02 ul li{
+    list-style: none;
+    margin: 8px 0px;
+}
+.footer02 ul li a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+.footer02 ul li a:hover{
+    color: orange;
+    transform: translateX(10px);
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+}
+.footer03 ul li{
+    float: left;
+    margin-right: 10px;
+    list-style: none;
+    margin-top: 18px;
+}
+.footer03 ul li a{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    box-sizing: content-box;
+}
+.footer03 ul li:nth-child(1) a:hover{
+    background-color: #4267b2;
+}
+.footer03 ul li:nth-child(2) a:hover{
+    background-color: #ff0000;
+}
+.footer03 ul li:nth-child(3) a:hover{
+    background-color: #db4437;
+}
+.end {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 0;
+    background: orange;
+    padding: 6px 0px;
+}
+@media screen and (max-width: 992px){
+    .footer01 img{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 576px){
+    .end{
+        font-size: 14px;
+    }
+    .footer01 img{
+        width: 70%;
+    }
+}

@@ -1,0 +1,18 @@
+<div id="movie">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-lg-12 text-center">
+          <button (click)="changeStatusMovie('phimDangChieu')" class="btn" [ngClass]="{'btn_tabphim':statusMovie === 'phimDangChieu'}">Phim Đang Chiếu</button>
+          <button (click)="changeStatusMovie('phimSapChieu')" class="btn" [ngClass]="{'btn_tabphim':statusMovie === 'phimSapChieu'}">Phim Sắp Chiếu</button>
+      </div>
+    </div>
+    <div class="row pt-4">
+      <div class="col-lg-12">
+        <app-movie-now-showing *ngIf='statusMovie === "phimDangChieu"'></app-movie-now-showing>
+      </div>
+      <div class="col-lg-12">
+        <app-movie-new-release *ngIf='statusMovie === "phimSapChieu"'></app-movie-new-release>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,153 @@
+<div class="ghestatus">
+  <div class="container">
+    <!-- THONG TIN GHE -->
+    <div class="row text-center ">
+      <div class="col-4 col-sm-4 col-lg-4 ">
+        <button class="btn btn_ghe "></button>
+        <span>Ghế chưa chọn</span>
+      </div>
+      <div class="col-4 col-sm-4 col-lg-4 ">
+        <button class="btn btn_ghe btn_dangchon"></button>
+        <span>Ghế đang chọn</span>
+      </div>
+      <div class="col-4 col-sm-4 col-lg-4">
+        <button class="btn btn_ghe btn_dachon"></button>
+        <span>Ghế đã đặt</span>
+      </div>
+    </div>
+    <!-- VIEW DAT GHE -->
+    <div class="row">
+      <div class="col-lg-12">
+          <div class="manhinh"></div>
+      </div>
+      <div class="col-lg-12">
+          <!-- BUTTON GHE -->
+          <div class="ghe">
+              <app-seat-item (gheOutPut)="layGheOutPut($event)" *ngFor="let itemGhe of GheArr" [gheDetail]="itemGhe"></app-seat-item>
+          </div>
+          <div class="thongtindat">
+            <div class="row align-items-center">
+              <div class="col-12 col-sm-6 col-lg-3">
+                  <p>Số ghế còn trống : <span class="gheconlai">{{soGheConTrong}}</span></p>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                  <p>Số ghế đã đặt : <span class="ghedadat">{{soGheDaDat.length}}</span></p>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-4">
+                  <p>Số ghế lựa chọn : 
+                    <span *ngIf="soGheLuaChon.length === 0" class="gheluachon">Chưa chọn</span>
+                    <span *ngFor="let item of soGheLuaChon" class="gheluachon">{{item.TenGhe}}</span>
+                  </p>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-2">
+                  <p><span class="thoigiandat" id="thoigiandat" >01:00</span></p>
+                  <!-- <button (click)="testSweetAlert()">Click me</button> -->
+              </div>
+            </div>
+          </div>
+          <button (click)="changeStatus()" class="btn btn_thanhtoan">Đặt Ghế</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- THONG TIN DAT GHE -->
+<div class="thanhtoan" [ngClass]="{'showThanhToan':status === true}">
+  <div (click)="changeStatus()" class="close">
+      <i class="fa fa-times"></i>
+  </div>
+  <h4>Phim đã chọn</h4>
+  <ul>
+    <li>
+      <b>Tên phim</b><span>{{chiTietPhim.TenPhim}}</span>
+      <div class="clear"></div>
+    </li>
+    <li>
+      <b>Rạp</b><span>{{objLichChieu.Rap.TenRap}}</span>
+      <div class="clear"></div>
+    </li>
+    <li>
+      <b>Ngày chiếu</b><span>{{objLichChieu.NgayChieuGioChieu | date:'dd/MM/yyyy'}}</span>
+      <div class="clear"></div>
+    </li>
+    <li>
+      <b>Suất chiếu</b><span>{{objLichChieu.NgayChieuGioChieu | date:'HH:mm'}}</span>
+      <div class="clear"></div>
+    </li>
+    <li>
+      
+      <b>Số ghế</b>
+      <span *ngIf="soGheLuaChon.length === 0">Chưa có </span>
+      <span *ngFor="let item of soGheLuaChon">,{{item.TenGhe}} </span>
+      <div class="clear"></div>
+    </li>
+    <li>
+      <b>Thời lượng</b><span>{{objLichChieu.ThoiLuong}} phút</span>
+      <div class="clear"></div>
+    </li>
+    <li>
+      <b>Giá vé</b><span>{{totalTicket | currency:'VND'}}</span>
+      <div class="clear"></div>
+    </li>
+    <li>
+      <a (click)="changeStatus()" data-toggle="modal" data-target="#datbapnuoc">Thêm Combo Bắp Nước</a>
+    </li>
+    <li>
+        <b>Giá Bắp - Nước</b><span>{{subTotal | currency:'VND'}}</span>
+        <div class="clear"></div>
+    </li>
+  </ul>
+  <div class="tongtien">
+    <p class="total">Tổng Tiền</p>
+    <span>{{totalAll | currency:'VND'}}</span>
+  </div>
+  <button class="btn btn_buy" (click)="ThanhToan()">MUA</button>
+  <a (click)="changeStatus()" class="fa fa-long-arrow-left"> Chọn lại</a>
+</div>
+
+<!-- MODAL DAT BAP NUOC -->
+
+<div class="modal fade modalDatBapNuoc" id="datbapnuoc" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div  class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Chọn Bắp và Nước muốn đặt</h5>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-6 border-right">
+                <div class="category">
+                    <!-- BẮP -->
+                    <h4 class=" text-center">Bắp rang</h4>
+                    <app-popcorn-drink-item (eventTangGiam)="eventTangGiam($event)" *ngFor="let item of BapList" [itemFood]="item"></app-popcorn-drink-item>
+
+                    <!-- Combo -->
+                    <h4 class=" text-center">Combo</h4>
+                    <app-popcorn-drink-item (eventTangGiam)="eventTangGiam($event)" *ngFor="let item of ComboList" [itemFood]="item"></app-popcorn-drink-item>
+
+                    <!-- NƯỚC -->
+                    <h4 class=" text-center">Nước</h4>
+                    <app-popcorn-drink-item (eventTangGiam)="eventTangGiam($event)" *ngFor="let item of NuocList" [itemFood]="item"></app-popcorn-drink-item>
+
+                  </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="hoadon">
+                <h4 class="title">Thức ăn đã chọn</h4>
+                <p *ngIf="ListChooseFood.length === 0"><i class="fa fa-spinner border-0 text-danger"></i> Chưa chọn thức ăn</p>
+                <p *ngFor="let itemChoose of ListChooseFood"><i class="fa fa-check"></i> {{itemChoose.ten}} - Số lượng : {{itemChoose.soLuong}}</p>
+                <h4 class="tongtienfood">Tổng tiền : <span>{{total | currency:'VND'}}</span></h4>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button (click)="changeStatus()" type="button" class="btn btn-warning w-100" data-dismiss="modal">Quay lại</button>
+        <button (click)="chooseSuccessFood()" type="button" class="btn btn-success w-100" data-dismiss="modal">Chọn xong</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Thong bao -->
+<div class="thongbaothanhcong alert alert-warning" [ngClass]="{'thongbaohienra':thongBaoSoGhe === true}" role="alert">
+  <strong>Đặt tối đa 2 ghế</strong>
+</div>

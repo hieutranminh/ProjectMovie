@@ -1,0 +1,294 @@
+
+.ghestatus .btn_ghe{
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    box-shadow: none;
+    padding: 10px 15px;
+    position: relative;
+}
+.ghestatus .btn_ghe:before{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 20px;
+    height: 4px;
+    margin-left: -10px;
+    background: rgba(255, 255, 255, 0.4)
+}
+.ghestatus span{
+    color: white;
+    margin-left: 8px;
+    font-size: 14px;
+}
+.ghestatus .btn_dangchon,.ghestatus .btn_dangchon:before{
+    background: #3ece7e;
+    box-shadow: 0px 0px 40px -4px #3ece7e;
+}
+.ghestatus .btn_dachon,.ghestatus .btn_dachon:before{
+    background: orange;  
+}
+.ghestatus .ghe{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.manhinh{
+    width: 100%;
+    height: 3px;
+    margin: 50px 0px 30px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 12px 1px yellow;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.ghe .btn_ghe{
+    margin: 10px;
+}
+
+/* CSS MENU PHAI THANH TOAN */
+.thanhtoan {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 200;
+    width: 25%;
+    height: 100%;
+    background: white;
+    padding: 40px 50px;
+    color: black;
+    box-shadow: 0px 0px 9px -1px black;
+    border: 5px solid gainsboro;
+    opacity: 0;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+}
+.showThanhToan{
+    opacity: 1;
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+}
+.thanhtoan .close{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: orange;
+    padding: 10px 15px;
+    color: black;
+}
+.thanhtoan h4{
+    text-transform: uppercase;
+    margin: 18px 0px 25px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.thanhtoan ul li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.thanhtoan ul li b {
+    color: orange;
+    float: left;
+}
+.thanhtoan ul li span {
+    float: right;
+}
+.clear{
+    clear: both;
+}
+.thanhtoan ul li a{
+    display: block;
+    text-align: center;
+    background: orange;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+.thanhtoan ul li a:hover{
+    text-decoration: underline;
+}
+.tongtien {
+    border-top: 2px solid gainsboro;
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tongtien .total {
+    font-weight: bold;
+    color: orangered;
+    text-transform: uppercase;
+    margin: 0px;
+    display: inline-block;
+}
+.tongtien span {
+    font-weight: 500;
+    font-size: 22px;
+    color: orangered;
+}
+.thanhtoan .btn_buy {
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    background: orange;
+}
+.btn_thanhtoan {
+    background: orange;
+    color: white;
+    font-weight: 700;
+    margin-top: 35px;
+    padding: 7px 20px;
+}
+.thanhtoan a.fa {
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #2d2dff;
+}
+.thanhtoan a.fa:hover{
+    text-decoration: underline;
+}
+/* CSS Thong Tin Dat Ghe */
+.thongtindat {
+    margin-top: 50px;
+    border: 1px solid white;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 20px 0px;
+    box-shadow: 0px 0px 6px 0px white;
+    user-select: none;
+}
+
+.thongtindat p {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.thongtindat p span {
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: inline-block;
+}
+.thongtindat p span.gheconlai {
+    background: rgba(255, 255, 255, 0.4);
+}
+.thongtindat p span.ghedadat {
+    background: orange;
+}
+.thongtindat p span.gheluachon {
+    background: #3ece7e;
+}
+.thongtindat p span.thoigiandat {
+    color: white;
+    font-size: 30px;
+    padding: 0px;
+}
+
+/* CSS Modal Dat Bap Nuoc */
+.modalDatBapNuoc .modal-content {
+    background: white;
+    border: 3px solid orange;
+    font-family: 'Roboto', sans-serif;
+}
+.modalDatBapNuoc .modal-header {
+    background: orange;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 0px;
+}
+
+.modalDatBapNuoc .modal-header .modal-title {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.category h4 {
+    background: #3ece7e;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 0px;
+    margin: 0px;
+}
+.hoadon .title {
+    color: orange;
+    background: aliceblue;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 9px 0px;
+    border: 1px solid black;
+}
+.hoadon p{
+    font-size: 16px;
+    margin: 20px 0px;
+    color: black;
+}
+.hoadon p i.fa{
+    color: orange;
+    border: 1px solid orange;
+    padding: 2px;
+    margin-right: 2px;
+}
+.hoadon .tongtienfood {
+    color: black;
+    margin: 0px;
+    border-top: 2px solid gainsboro;
+    padding: 18px 0px;
+}
+.hoadon .tongtienfood span {
+    color: orange;
+}
+@media screen and (max-width: 1200px){
+    .thanhtoan{
+        width: 40%;
+        padding: 20px;
+    }
+}
+@media screen and (max-width: 992px){
+    .thanhtoan{
+        width: 50%;
+        padding: 20px;
+    }
+    .thongtindat p {
+        margin-bottom: 8px;
+    }
+}
+@media screen and (max-width: 576px){
+    .ghestatus span{
+       margin: 0px;
+       display: block;
+       margin-top: 10px;
+       font-size: 10px;
+    }
+    .thanhtoan {
+        width: 100%;
+        padding: 15px 25px;
+    }
+    .thongtindat p span.gheluachon {
+        margin-right: 6px;
+    }
+ 
+}

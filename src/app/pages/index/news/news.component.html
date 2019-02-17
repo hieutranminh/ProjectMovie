@@ -1,0 +1,14 @@
+<div id="news">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-lg-12 text-center">
+          <button class="btn " [ngClass]='{"btn_tabphim":statusNews==="dienanh"}' (click)="changeStatusNews('dienanh')">Điện ảnh</button>
+          <button class="btn " [ngClass]='{"btn_tabphim":statusNews==="review"}' (click)="changeStatusNews('review')">Reviews</button>
+          <button class="btn " [ngClass]='{"btn_tabphim":statusNews==="khuyenmai"}' (click)="changeStatusNews('khuyenmai')">Khuyến mãi</button>
+      </div>
+    </div>
+    <app-news-film *ngIf='statusNews === "dienanh"'></app-news-film>
+    <app-news-review *ngIf='statusNews === "review"'></app-news-review>
+    <app-news-promotion *ngIf='statusNews === "khuyenmai"'></app-news-promotion>
+  </div>
+</div>
